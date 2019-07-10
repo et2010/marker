@@ -155,7 +155,9 @@ elif [[ -n "$BASH" ]]; then
         READLINE_POINT="${#READLINE_LINE}"
     }   
 
-    bind -x '"'"$marker_key_get"'":_marker_get'
+    # https://github.com/pindexis/marker/issues/45#issuecomment-363795526
+    bind -x '"\emg1":"_marker_get"'
+    bind '"'"$marker_key_get"'":"\emg1"'
 
     bind -x '"\em1":"_marker_mark_1"'
     bind -x '"\em2":"_marker_mark_2"'
